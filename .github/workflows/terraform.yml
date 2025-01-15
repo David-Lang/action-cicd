@@ -54,7 +54,7 @@ permissions:
 
 env:
   TF_VAR_APPLIANCE_URL: "${{ vars.TFVAR_APPLIANCE_URL }}"
-  TF_VAR_ACCOUNT: "${{ vars.TFVAR_ACCOUNT }}"
+  TF_VAR_account: "${{ vars.TFVAR_ACCOUNT }}"
   TF_VAR_LOGIN: "${{ vars.TFVAR_LOGIN }}"
   TF_VAR_API_KEY: "${{ vars.TFVAR_API_KEY }}"
   TF_VAR_SSL_CERT: "${{ vars.TFVAR_SSL_CERT }}"
