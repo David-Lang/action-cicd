@@ -64,6 +64,10 @@ jobs:
         shell: bash
 
     steps:
+    - name: 'setup env'
+      run: |
+        export TF_VAR_APPLIANCE_URL ${{ var.TF_VAR_APPLIANCE_URL }}
+
     - name: 'output env'
       run: |
         env
