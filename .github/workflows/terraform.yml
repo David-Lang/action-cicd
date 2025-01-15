@@ -54,6 +54,7 @@ permissions:
 
 env:
   TF_VAR_ACCOUNT: "conjur"
+  TF_VAR_APPLIANCE_URL: "${{ vars.TF_VAR_APPLIANCE_URL }}"
 
 jobs:
   terraform:
@@ -67,18 +68,13 @@ jobs:
         shell: bash
 
     steps:
-    - name: 'setup env'
-      run: |
-        export TF_VAR_APPLIANCE_URL="${{ vars.TF_VAR_APPLIANCE_URL }}"
-
-
     - name: 'output env GITHUB'
       run: |
         env | grep GITHUB
 
     - name: 'output env TF_VAR'
       run: |
-        env | grep TFVAR
+        env | grep TF_VAR
 
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
