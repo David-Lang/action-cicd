@@ -58,6 +58,7 @@ env:
   TF_VAR_login: "${{ vars.TFVAR_LOGIN }}"
   TF_VAR_api_key: "${{ secrets.TFVAR_API_KEY }}"
   TF_VAR_ssl_cert: "${{ vars.TFVAR_SSL_CERT }}"
+  TF_VAR_conjur_secret_id_1: "${{ vars.TFVAR_conjur_secret_id_1 }}"
 
 jobs:
   terraform:

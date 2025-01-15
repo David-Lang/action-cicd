@@ -11,8 +11,8 @@ variable "appliance_url" {}
 variable "account" {}
 variable "login" {}
 variable "api_key" {}
-variable "ssl_cert_path" {}
-#variable "ssl_cert" {}
+#variable "ssl_cert_path" {}
+variable "ssl_cert" {}
 
 variable "conjur_secret_id_1" {}
 
@@ -21,8 +21,8 @@ provider "conjur" {
   account = var.account
   login = var.login
   api_key = var.api_key
-  ssl_cert_path = var.ssl_cert_path
-  # ssl_cert = var.conjur_ssl_cert
+  #ssl_cert_path = var.ssl_cert_path
+  ssl_cert = var.ssl_cert
 }
 
 data "conjur_secret" "secret_1" {
