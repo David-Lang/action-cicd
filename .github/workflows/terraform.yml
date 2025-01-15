@@ -72,12 +72,10 @@ jobs:
 
     steps:
     - name: 'output env GITHUB'
-      run: |
-        env | grep GITHUB
+      run: env | grep GITHUB
 
     - name: 'output env TFVAR'
-      run: |
-        env | grep TFVAR
+      run: env | grep TFVAR
 
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
