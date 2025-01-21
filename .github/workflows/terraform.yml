@@ -53,6 +53,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 env:
   TF_VAR_appliance_url: "${{ vars.TFVAR_APPLIANCE_URL }}"
