@@ -126,9 +126,10 @@ jobs:
         echo "SECRET_2:$SECRET_2"
         echo "SECRET_1=$SECRET_1" >> "$GITHUB_ENV"
         echo "SECRET_2=$SECRET_2" >> "$GITHUB_ENV"
+        echo "TF_VAR_api_key=$SECRET_2" >> "$GITHUB_ENV"
 
-    - name: 'output env GITHUB'
-      run: env | grep GITHUB || true
+#    - name: 'output env GITHUB'
+#      run: env | grep GITHUB || true
 
     - name: 'output env TFVAR'
       run: env | grep TFVAR || true
