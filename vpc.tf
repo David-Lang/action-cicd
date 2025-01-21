@@ -1,5 +1,5 @@
-#data "aws_availability_zones" "available" {}
-#
+data "aws_availability_zones" "available" {}
+
 #module "lab_vpc" {
 #  source  = "terraform-aws-modules/vpc/aws"
 #  version = "~> 5.17"

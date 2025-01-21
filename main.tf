@@ -35,3 +35,11 @@ output "aws_secret" {
   # because it's derived from a Conjur variable value that is declared as sensitive.
   sensitive = true
 }
+
+output "aws_token" {
+  //noinspection HILUnresolvedReference
+  value = local.aws_creds_json["data"]["session_token"]
+  # Must mark this output as sensitive for Terraform v0.15+,
+  # because it's derived from a Conjur variable value that is declared as sensitive.
+  sensitive = true
+}
