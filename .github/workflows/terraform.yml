@@ -166,4 +166,8 @@ jobs:
       run: terraform apply -auto-approve -input=false
 
     - name: 'TF Output '
-      run: terraform output secret_1_output
+      run: |
+        terraform output secret_1_output
+        terraform output aws_key
+        terraform output aws_secret
+        

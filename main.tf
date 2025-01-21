@@ -11,7 +11,7 @@ variable "aws_region" {
   default = "ca-central-1"
 }
 
-# data.conjur_secret.db_password.value will be set by the Conjur Provider
+# data.conjur_secret.secret_1_output.value will be set by the Conjur Provider
 output "secret_1_output" {
   //noinspection HILUnresolvedReference
   value = data.conjur_secret.secret_1.value
@@ -20,3 +20,18 @@ output "secret_1_output" {
   sensitive = true
 }
 
+output "aws_key" {
+  //noinspection HILUnresolvedReference
+  value = local.aws_creds_json["data"]["access_key_id"]
+  # Must mark this output as sensitive for Terraform v0.15+,
+  # because it's derived from a Conjur variable value that is declared as sensitive.
+  sensitive = true
+}
+
+output "aws_secret" {
+  //noinspection HILUnresolvedReference
+  value = local.aws_creds_json["data"]["secret_access_key"]
+  # Must mark this output as sensitive for Terraform v0.15+,
+  # because it's derived from a Conjur variable value that is declared as sensitive.
+  sensitive = true
+}

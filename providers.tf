@@ -4,10 +4,10 @@ terraform {
       source  = "cyberark/conjur"
       version = "0.6.3"
     }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
+#    aws = {
+#      source  = "hashicorp/aws"
+#      version = "~> 5.0"
+#    }
   }
 }
 
@@ -29,8 +29,8 @@ locals {
 }
 
 //noinspection HILUnresolvedReference
-provider "aws" {
-  region     = var.aws_region
-  access_key = local.aws_creds_json["data"]["access_key_id"]
-  secret_key = local.aws_creds_json["data"]["secret_access_key"]
-}
+#provider "aws" {
+#  region     = var.aws_region
+#  access_key = local.aws_creds_json["data"]["access_key_id"]
+#  secret_key = local.aws_creds_json["data"]["secret_access_key"]
+#}
