@@ -33,5 +33,5 @@ provider "aws" {
   region     = var.aws_region
   access_key = local.aws_creds_json["data"]["access_key_id"]
   secret_key = local.aws_creds_json["data"]["secret_access_key"]
-  session_token = local.aws_creds_json["data"]["session_token"]
+  token = local.aws_creds_json["data"]["session_token"]
 }
