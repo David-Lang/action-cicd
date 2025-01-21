@@ -62,6 +62,9 @@ env:
   TF_VAR_api_key: "${{ secrets.TFVAR_API_KEY }}"
   TF_VAR_ssl_cert: "${{ vars.TFVAR_SSL_CERT }}"
   TF_VAR_conjur_secret_id_1: "${{ vars.TFVAR_conjur_secret_id_1 }}"
+  CONJUR_AUTHENTICATE_URL: "${{ vars.CONJUR_URL }}/authn-jwt/${{ vars.CONJUR_JWT_AUTHN_ID }}/${{ vars.CONJUR_ACCOUNT }}/authenticate"
+  CONJUR_RETRIEVE_URL: "${{ vars.CONJUR_URL }}/secrets/${{ vars.CONJUR_ACCOUNT }}/variable"
+
 
 jobs:
   terraform:
@@ -95,7 +98,7 @@ jobs:
         echo $JWT > /tmp/action.jwt
 
     - name: 'Upload JWT Artifact'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: actions.jwt
         path: /tmp/action.jwt
