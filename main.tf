@@ -11,6 +11,13 @@ variable "aws_region" {
   default = "ca-central-1"
 }
 
+data "aws_availability_zones" "available" {}
+
+output "aws_availability_zones_output" {
+  //noinspection HILUnresolvedReference
+  value = data.aws_availability_zones.available
+}
+
 # data.conjur_secret.secret_1_output.value will be set by the Conjur Provider
 output "secret_1_output" {
   //noinspection HILUnresolvedReference
